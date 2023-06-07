@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import FilmsList from "./components/filmslist";
 
 //Extend allows new class to inherit.
 class App extends React.Component {
@@ -43,10 +44,11 @@ class App extends React.Component {
         </form>
 
         <ul>
-          {this.state.list.map((item, idx) => {
+          {this.state.list.map((item, idx) => { //This idx helps make a unique key for each item.
             return <li key={item + idx}> {item}</li>;
           })}
         </ul>
+        <FilmsList />
       </div>
     );
   }
